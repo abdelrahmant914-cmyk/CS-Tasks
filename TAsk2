@@ -1,0 +1,16 @@
+def count_sheep(sheep_list):
+    if not sheep_list:  # handle None or empty list
+        return 0
+    return sum(1 for sheep in sheep_list if sheep is True)
+
+# Example usage
+sheep = [
+    True, True, True, False,
+    True, True, True, True,
+    True, False, True, False,
+    True, False, False, True,
+    True, True, True, True,
+    False, False, True, True
+]
+
+print(count_sheep(sheep))  # Output: 17
