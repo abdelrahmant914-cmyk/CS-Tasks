@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int rollNumber;
+    float marks[5];
+
+public:
+    // Constructor
+    Student(string n, int r, float m[5]) {
+        name = n;
+        rollNumber = r;
+        for (int i = 0; i < 5; i++) {
+            marks[i] = m[i];
+        }
+    }
+
+    // Method to calculate average marks
+    float getAverage() {
+        float sum = 0;
+        for (int i = 0; i < 5; i++) {
+            sum += marks[i];
+        }
+        return sum / 5;
+    }
+
+    // Method to display student details
+    void display() {
+        cout << "Name: " << name << endl;
+        cout << "Roll Number: " << rollNumber << endl;
+        cout << "Marks: ";
+        for (int i = 0; i < 5; i++) {
+            cout << marks[i] << " ";
+        }
+        cout << endl;
+        cout << "Average: " << getAverage() << endl << endl;
+    }
+};
+
+int main() {
+    float marks1[5] = {85, 90, 78, 92, 88};
+    float marks2[5] = {75, 80, 68, 82, 78};
+
+    // Create 2 Student objects
+    Student student1("Ahmed", 101, marks1);
+    Student student2("Sara", 102, marks2);
+
+    // Show details and average
+    student1.display();
+    student2.display();
+
+    return 0;
+}
